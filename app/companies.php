@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class companies extends Model
 {
     //
+    protected $primaryKey = 'id';
     protected $table = 'companies';
     protected $fillable = [
         'name','email','website'
     ];
     public function employee(){
-        return $this->hasMany('App\employee');
+    	
+        return $this->hasMany('App\employee','company_id');
     }
 }

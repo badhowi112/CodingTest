@@ -32,14 +32,14 @@
                         <thead>
                             <tr>
                               <th scope="col">id</th>
-                              <th scope="col">Nama Perusahaan</th>
+                              <th scope="col">Company</th>
                               <th scope="col">Email</th>
                               <th scope="col">Website</th>
                               <th scope="col">Aksi</th>
                             </tr>
                           </thead>
                           <tbody>
-                              @foreach ($data as $item)
+                              @foreach ($companies as $item)
                             <tr>
                                 <td>{{$loop->index + 1}}</td>                                    
                                 <td>{{$item->name}}</td>
@@ -81,7 +81,7 @@
                         <thead>
                             <tr>
                               <th scope="col">id</th>
-                              <th scope="col">Perusahaan</th>
+                              <th scope="col">Company</th>
                               <th scope="col">Nama Depan</th>
                               <th scope="col">Nama Belakang</th>
                               <th scope="col">Email</th>
@@ -93,7 +93,7 @@
                             @foreach ($employee as $data)
                           <tr>
                               <td>{{$loop->index + 1}}</td>                                    
-                              <td>{{$data->companies->name}}</td>
+                              <td>{{$data->companie->name}}</td>
                               <td>{{$data->firstname}}</td>
                               <td>{{$data->lastname}}</td>
                               <td>{{$data->email}}</td>
@@ -125,10 +125,10 @@
                 @csrf
                 <div class="form-group">
                 <select class="form-select" name="company_id" aria-label="Default select example">
-                    <option selected>Pilih Karyawan</option>
-                    {{-- @foreach ($da as $ite)
-                    <option value="{{$ite->companies->name}}">{{$ite->companies->name}}</option>    
-                    @endforeach                    --}}
+                    <option selected>Pilih Company</option>
+                    @foreach ($companies as $company_id)
+                    <option value="{{$company_id->id}}">{{$company_id->name}}</option>    
+                    @endforeach  
                   </select>
                 </div>
                   <div class="form-group">
@@ -147,12 +147,13 @@
                     <label for="exampleFormControlInput1">Phone</label>
                     <input type="number" class="form-control" name="phone" required>
                   </div>
-            </form>
+            
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
+        </form>
       </div>
     </div>
   </div>

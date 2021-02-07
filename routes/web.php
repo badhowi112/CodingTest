@@ -26,7 +26,7 @@ Route::get('/company/{id}/edit', 'HomeController@edit')->name('edit');
 Route::get('/company/{id}/hapus', 'HomeController@destroy')->name('destroy');
 
 Route::post('/employee/create', 'HomeController@add')->name('add');
-Route::post('/employee/{id}/update', 'HomeController@updat')->name('updat');
+Route::post('/employees/{id}/update', 'HomeController@upd')->name('upd');
 Route::get('/employee/{id}/edit', 'HomeController@edits')->name('edits');
 Route::get('/employee/{id}/hapus', 'HomeController@destroys')->name('destroys');
 

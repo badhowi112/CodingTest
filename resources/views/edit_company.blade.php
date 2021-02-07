@@ -29,7 +29,7 @@
                       <form action="/company/{{$ids->id}}/update" method="POST">
                         @csrf
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Kode Mobil</label>
+                            <label for="exampleFormControlInput1">Company</label>
                             <input type="text" value="{{$ids->name}}" class="form-control" name="name" required>
                           </div>
                           <div class="form-group">
@@ -37,7 +37,7 @@
                             <input type="text" value="{{$ids->email}}" class="form-control" name="email" required>
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Kode Mobil</label>
+                            <label for="exampleFormControlInput1">Website</label>
                             <input type="text" value="{{$ids->website}}" class="form-control" name="website" required>
                           </div>
                           
